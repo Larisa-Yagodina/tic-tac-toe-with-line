@@ -11,8 +11,8 @@ const Game = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
     const [winner, finishLineClass] = calculateWinner(board);
+    const draw = board.indexOf(null) === -1 && !winner;
 
-    console.log(board)
     const handleClick = (i) => {
         const symbol = xIsNext ? 'X' : 'O';
         setBoard(board.map((el, ind) => ind === i ? symbol : el))
@@ -24,6 +24,8 @@ const Game = () => {
         setXIsNext(true)
     }
 
+
+
     return (
         <>
             <Board
@@ -34,10 +36,13 @@ const Game = () => {
             />
 
             <div style={styles}>
-                <h2>
+                {!draw && <h2>
                     {winner ? `Winner: ${winner}` : 'Next player: ' + (xIsNext ? 'X' : 'O')}
-                </h2>
-                {winner && <button className={'restart-button'} onClick={restart}> restart </button>}
+                </h2>}
+                <h3>
+                    {draw && `It's DRAW!`}
+                </h3>
+                {(winner || draw ) && <button className={'restart-button'} onClick={restart}> restart </button>}
             </div>
         </>
     )
