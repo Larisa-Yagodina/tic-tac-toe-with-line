@@ -1,38 +1,82 @@
 .App {
   text-align: center;
+  color: teal;
 }
 
-.App-logo {
-  height: 40vmin;
+.blocked-events {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.finish-line {
+  border: 2px solid #e00272;
+  visibility: hidden;
+  transition: opacity 1s;
+  opacity: 0
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.visible {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+}
+
+.horizontal {
+  margin: 0 10px;
+  width: 280px;
+  height: 0;
+}
+
+.top {
+  top: 55px;
+}
+
+.h-middle {
+  top: 155px;
+}
+
+.bottom {
+  top: 252px;
+}
+
+.vertical {
+  height: 280px;
+  width: 0;
+  top: 12px;
+}
+
+.left {
+  left: 54px;
+}
+
+.v-middle {
+  left: 152px;
+}
+
+.right {
+  left: 252px;
+}
+
+.diagonal {
+  border: 3px solid #e00272;
+  width: 260px;
+  top: 150px;
+  left: 20px;
+}
+
+.bottom-top {
+  transform: skewY(-45deg);
+}
+
+.top-bottom {
+  transform: skewY(-135deg);
+}
+
+.restart-button {
+  padding: 5px 20px;
+  border: 1px solid teal;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background: teal;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: large;
 }
