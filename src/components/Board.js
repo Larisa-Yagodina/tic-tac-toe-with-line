@@ -20,6 +20,7 @@ const boardWrapper = {
 }
 
 const Board = ({squares, onClick, finishLineClass, winner}) => (
+
     <div style={boardWrapper}>
 
         <div style={style} className={winner && 'blocked-events'}>
@@ -32,6 +33,7 @@ const Board = ({squares, onClick, finishLineClass, winner}) => (
                 />
             ))}
         </div>
+
         <FinalLine finishLineClass={finishLineClass}/>
     </div>
 )
