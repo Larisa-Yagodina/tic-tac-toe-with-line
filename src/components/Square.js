@@ -9,10 +9,17 @@ const style = {
     outline: 'none'
 }
 
-const Square = ({value, onClick}) => (
-    <button style={style} onClick={onClick}>
-        {value}
-    </button>
-)
+const Square = ({value, onClick}) => {
+
+    return (
+        <button
+            style={style}
+            onClick={onClick}
+            className={value && 'blocked-events'}
+        >
+            {value}
+        </button>
+    )
+}
 
 export default Square;

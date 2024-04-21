@@ -26,7 +26,6 @@ const Board = ({squares, onClick, finishLineClass, winner}) => (
         <div style={style} className={winner && 'blocked-events'}>
             {squares.map((square, i) => (
                 <Square
-
                     key={i}
                     value={square}
                     onClick={() => onClick(i)}
