@@ -1,6 +1,6 @@
 import React from 'react';
-import Square from './Square';
-import FinalLine from "./FinalLine";
+import Square from '../square/Square';
+import FinalLine from "../FinalLine";
 
 const style = {
     border: '4px solid teal',
@@ -28,6 +28,7 @@ const Board = ({squares, onClick, finishLineClass, winner}) => (
                 <Square
                     key={i}
                     value={square}
+                    index={i}
                     onClick={() => onClick(i)}
                 />
             ))}

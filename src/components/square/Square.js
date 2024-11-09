@@ -6,13 +6,13 @@ const style = {
     fontSize: '50px',
     fontWeight: '800',
     cursor: 'pointer',
-    outline: 'none'
 }
 
-const Square = ({value, onClick}) => {
+const Square = ({value, index, onClick}) => {
 
     return (
         <button
+            data-testid={`square-${index}`}
             style={style}
             onClick={onClick}
             className={value && 'blocked-events'}

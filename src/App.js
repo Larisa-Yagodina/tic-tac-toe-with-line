@@ -1,5 +1,5 @@
 import './App.css';
-import Game from "./components/Game";
+import Game from "./components/game/Game";
 
 function App() {
 
@@ -7,6 +7,7 @@ function App() {
     <div className="App">
 
         <h1>Tic-Tac-Toe game</h1>
+
      <Game />
     </div>
   );

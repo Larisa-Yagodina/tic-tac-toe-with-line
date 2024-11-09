@@ -10,7 +10,7 @@ const finishLineVariants = {
     DIAGONAL_TOP_BOTTOM: 'visible diagonal top-bottom',
 }
 
-const calculateClass = (lineIndex) => {
+export const calculateClass = (lineIndex) => {
     switch (lineIndex) {
         case 0:
             return finishLineVariants.HORIZONTAL_TOP;
@@ -31,28 +31,6 @@ const calculateClass = (lineIndex) => {
         default:
             return '';
     }
-}
-export function calculateWinner(squares) {
-
-    const lines = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6],
-    ];
-
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];
-        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-            return [squares[a], calculateClass(i)];
-        }
-    }
-
-    return [null, ''];
 }
 
 
